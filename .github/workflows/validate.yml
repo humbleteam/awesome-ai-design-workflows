@@ -1,0 +1,50 @@
+name: validate
+
+# Two gates: the list keeps awesome-list formatting, and every link still resolves.
+# The monthly schedule exists because link rot, not formatting, is what kills a
+# curated list - an entry that 404s is worse than no entry.
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 6 1 * *'
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # awesome-lint's github rule resolves the repo through the current branch's
+      # tracking remote. actions/checkout does not always set it on push builds,
+      # and without it the rule reports "must reside in a valid git repository".
+      - name: Make the remote discoverable to awesome-lint
+        run: |
+          branch=$(git branch --show-current)
+          if [ -n "$branch" ]; then git config "branch.$branch.remote" origin; fi
+
+      - name: awesome-lint
+        run: npx --yes awesome-lint@2
+
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Link check
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # 403 and 429 are bot-blocking and rate limiting, not dead links
+          # (w3.org and several vendor sites refuse CI user agents).
+          args: --no-progress --accept 200,206,403,429 --max-concurrency 4 README.md contributing.md
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
