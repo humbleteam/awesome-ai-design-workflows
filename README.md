@@ -78,6 +78,7 @@ Maintained by us, the maintainers of this list, and MIT licensed:
 ## Generating UI and mockups
 
 - [Stitch](https://stitch.withgoogle.com/) - Google's tool for generating mobile and web UI from a prompt or an image, for ideation speed.
+- [BuildMuse](https://buildmuse.design/) - Curated UI, app, web, icon, and motion references with an AI chat for turning rough ideas into concise design directions.
 - [Figma Make](https://www.figma.com/blog/introducing-figma-make/) - Figma's prompt-to-working-prototype feature, announced in this post.
 - [Magic Patterns](https://www.magicpatterns.com/) - Prompt to UI that can be pointed at your own design system rather than a generic kit.
 - [Subframe](https://www.subframe.com/) - Design tool built around real components that outputs React and Tailwind.
