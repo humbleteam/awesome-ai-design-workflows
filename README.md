@@ -162,6 +162,7 @@ Read these before asserting what a model can do with a screen.
 - [Smashing Magazine on AI](https://www.smashingmagazine.com/category/ai/) - Practitioner articles on AI in design and front-end work.
 - [Laws of UX](https://lawsofux.com/) - Short reference for the heuristics you will be citing in reviews.
 - [10 usability heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/) - The original list, still the cheapest shared vocabulary for critique.
+- [VibeCraft](https://github.com/Shugar86/vibecraft-manifest/blob/main/README.en.md) - English/Russian manifesto and worked cases for designing human–AI collaboration, connecting an agent's persona, initiative and responses to concrete interaction scenes.
 
 ## Related lists
 
