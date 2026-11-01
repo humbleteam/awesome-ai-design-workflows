@@ -129,6 +129,7 @@ Every item here is scriptable, which means it can be a gate rather than a good i
 ## Visual and behavioral QA
 
 - [Playwright](https://playwright.dev/) - Browser automation with screenshot comparison, the base layer for agent-driven UI checks.
+- [agent-qa](https://vostride.com) - Natural-language behavioral tests for web, Android and iOS through CLI/MCP, with persistent memory and evidence-gated self-improvement.
 - [Chromatic](https://www.chromatic.com/) - Visual regression review built on Storybook stories.
 - [Percy](https://percy.io/) - Visual testing across browsers and widths as a CI gate.
 - [Applitools](https://applitools.com/) - Visual testing with model-based comparison that tolerates rendering noise.
